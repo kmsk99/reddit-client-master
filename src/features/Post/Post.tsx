@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
-import './Post.css';
 import {
     TiArrowUpOutline,
     TiArrowUpThick,
@@ -38,16 +37,16 @@ const Post = (props: {
 
     const renderUpVote = () => {
         if (voteValue === 1) {
-            return <TiArrowUpThick className="icon-action" />;
+            return <TiArrowUpThick className="mr-1 text-2xl" />;
         }
-        return <TiArrowUpOutline className="icon-action" />;
+        return <TiArrowUpOutline className="mr-1 text-2xl" />;
     };
 
     const renderDownVote = () => {
         if (voteValue === -1) {
-            return <TiArrowDownThick className="icon-action" />;
+            return <TiArrowDownThick className="mr-1 text-2xl" />;
         }
-        return <TiArrowDownOutline className="icon-action" />;
+        return <TiArrowDownOutline className="mr-1 text-2xl" />;
     };
 
     const getVoteType = () => {
@@ -97,25 +96,30 @@ const Post = (props: {
     return (
         <article key={post.id}>
             <Card>
-                <div className="post-wrapper">
-                    <div className="post-votes-container">
+                <div className="flex">
+                    <div className="flex flex-col items-center mr-6">
                         <button
                             type="button"
-                            className={`icon-action-button up-vote ${
-                                voteValue === 1 && 'active'
+                            className={`cursor-pointer text-gray-600 p-0 flex items-center rounded bg-transparent border-none hover:bg-white hover:text-green-600 ${
+                                voteValue === 1 && 'text-green-600'
                             }`}
                             onClick={() => onHandleVote(1)}
                             aria-label="Up vote"
                         >
                             {renderUpVote()}
                         </button>
-                        <p className={`post-votes-value ${getVoteType()}`}>
+                        <p
+                            className={`font-bold my-2 ${
+                                getVoteType() === 'up-vote' && 'text-green-600'
+                            } 
+                            ${getVoteType() === 'down-vote' && 'text-red-600'}`}
+                        >
                             {shortenNumber(post.ups, 1)}
                         </p>
                         <button
                             type="button"
-                            className={`icon-action-button down-vote ${
-                                voteValue === -1 && 'active'
+                            className={`cursor-pointer text-gray-600 p-0 flex items-center rounded bg-transparent border-none hover:bg-white hover:text-red-600 ${
+                                voteValue === -1 && 'text-red-600'
                             }`}
                             onClick={() => onHandleVote(-1)}
                             aria-label="Down vote"
@@ -123,36 +127,36 @@ const Post = (props: {
                             {renderDownVote()}
                         </button>
                     </div>
-                    <div className="post-container">
-                        <h3 className="post-title">{post.title}</h3>
+                    <div className="w-full">
+                        <h3 className="m-0 mb-4 text-gray-800">{post.title}</h3>
 
-                        <div className="post-image-container">
-                            <img src={post.url} alt="" className="post-image" />
+                        <div className="w-full overflow-hidden rounded-lg">
+                            <img src={post.url} alt="" className="w-full" />
                         </div>
 
-                        <div className="post-details">
-                            <span className="author-details">
+                        <div className="flex items-center justify-between pt-2 mt-4 text-xs border-t border-gray-200 border-solid">
+                            <span className="flex items-center">
                                 <Avatar name={post.author} />
-                                <span className="author-username">
+                                <span className="font-bold text-indigo-600">
                                     {post.author}
                                 </span>
                             </span>
                             <span>
                                 {moment.unix(post.created_utc).fromNow()}
                             </span>
-                            <span className="post-comments-container">
+                            <span className="flex items-center">
                                 <button
                                     type="button"
-                                    className={`icon-action-button ${
+                                    className={`cursor-pointer text-gray-600 p-0 flex items-center rounded bg-transparent border-none hover:bg-white ${
                                         post.showingComments &&
-                                        'showing-comments'
+                                        'text-indigo-600'
                                     }`}
                                     onClick={() =>
                                         onToggleComments(post.permalink)
                                     }
                                     aria-label="Show comments"
                                 >
-                                    <TiMessage className="icon-action" />
+                                    <TiMessage className="mr-1 text-2xl" />
                                 </button>
                                 {shortenNumber(post.num_comments, 1)}
                             </span>

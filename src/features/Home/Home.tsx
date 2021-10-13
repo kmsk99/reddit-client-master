@@ -11,7 +11,6 @@ import {
     fetchComments,
     selectReddit,
 } from '../../store/redditSlice';
-import './Home.css';
 
 const Home = () => {
     const reddit = useSelector(selectReddit);
@@ -41,10 +40,11 @@ const Home = () => {
 
     if (error) {
         return (
-            <div className="error">
+            <div className="flex flex-col items-center justify-center">
                 <h2>Failed to load posts.</h2>
                 <button
                     type="button"
+                    className="py-4 text-base text-white bg-indigo-600 rounded cursor-pointer px-9"
                     onClick={() => dispatch(fetchPosts(selectedSubreddit))}
                 >
                     Try again
@@ -55,10 +55,11 @@ const Home = () => {
 
     if (posts.length === 0) {
         return (
-            <div className="error">
+            <div className="flex flex-col items-center justify-center">
                 <h2>No posts matching "{searchTerm}"</h2>
                 <button
                     type="button"
+                    className="py-4 text-base text-white bg-indigo-600 rounded cursor-pointer px-9"
                     onClick={() => dispatch(setSearchTerm(''))}
                 >
                     Go home

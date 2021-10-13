@@ -1,5 +1,3 @@
-import './Avatar.css';
-
 const Avatar = (props: { name: string }) => {
     const { name } = props;
 
@@ -7,7 +5,7 @@ const Avatar = (props: { name: string }) => {
         <img
             src={`https://api.adorable.io/avatars/10/${name}`}
             alt={`${name} profile`}
-            className="avatar-profile-image"
+            className="h-5 mr-2 rounded-xl"
         />
     );
 };
