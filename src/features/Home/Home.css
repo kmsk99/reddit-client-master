@@ -1,16 +1,16 @@
 .error {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .error button {
-  color: var(--color-text-invert);
-  background: var(--color-branding);
-  border: none;
-  border-radius: var(--radius);
-  font-size: 1rem;
-  padding: var(--spacing-2) var(--spacing-4);
-  cursor: pointer;
+    color: #ffffff;
+    background: #3d5af1;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 16px 36px;
+    cursor: pointer;
 }

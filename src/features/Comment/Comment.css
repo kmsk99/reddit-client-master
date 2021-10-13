@@ -1,27 +1,28 @@
 .comment {
-  background: var(--color-background);
-  margin: var(--spacing-1) 0;
-  padding: var(--spacing-2);
-  transition: box-shadow 0.1s ease-in;
-  border-radius: var(--border-radius);
+    background: #fcfcfc;
+    margin: 8px 0;
+    padding: 16px;
+    transition: box-shadow 0.1s ease-in;
+    border-radius: 4px;
 }
 
 .comment:hover {
-  box-shadow: var(--box-shadow);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
 }
 
 .comment-metadata {
-  display: flex;
-  margin-bottom: var(--spacing-2);
-  align-items: center;
+    display: flex;
+    margin-bottom: 16px;
+    align-items: center;
 }
 
 .comment-created-time {
-  margin-left: auto;
-  font-style: italic;
+    margin-left: auto;
+    font-style: italic;
 }
 
 .comment-author {
-  font-weight: bold;
-  color: var(--color-branding);
+    font-weight: bold;
+    color: #3d5af1;
 }

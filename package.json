@@ -1,55 +1,68 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@reduxjs/toolkit": "^1.4.0",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "@types/jest": "^27.0.2",
-    "@types/node": "^16.10.3",
-    "@types/react": "^17.0.28",
-    "@types/react-dom": "^17.0.9",
-    "moment": "^2.27.0",
-    "react": "^16.13.1",
-    "react-animated-list": "^0.1.4",
-    "react-dom": "^16.13.1",
-    "react-icons": "^3.11.0",
-    "react-loading-skeleton": "^2.1.1",
-    "react-markdown": "^4.3.1",
-    "react-redux": "^7.2.1",
-    "react-scripts": "3.4.3",
-    "typescript": "^4.4.3"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint ./src/**.*{js,jsx} --fix"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-react": "^7.20.6",
-    "eslint-plugin-react-hooks": "^4.1.0"
-  }
+    "name": "reddit-client-master",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@craco/craco": "^6.3.0",
+        "@reduxjs/toolkit": "^1.5.1",
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.3.2",
+        "@testing-library/user-event": "^7.1.2",
+        "@types/jest": "^24.0.0",
+        "@types/node": "^12.0.0",
+        "@types/react": "^16.9.0",
+        "@types/react-dom": "^16.9.0",
+        "@types/react-redux": "^7.1.7",
+        "moment": "^2.29.1",
+        "react": "^17.0.2",
+        "react-animated-list": "^0.1.4",
+        "react-dom": "^17.0.2",
+        "react-icons": "^4.3.1",
+        "react-loading-skeleton": "^2.2.0",
+        "react-markdown": "^7.0.1",
+        "react-redux": "^7.2.0",
+        "react-scripts": "4.0.3",
+        "typed-react-markdown": "^0.1.0",
+        "typescript": "~4.1.5"
+    },
+    "scripts": {
+        "start": "craco start",
+        "build": "craco build",
+        "test": "craco test",
+        "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.",
+    "main": "portcss.config.js",
+    "devDependencies": {
+        "autoprefixer": "^9.8.8",
+        "postcss": "^7.0.39",
+        "postcss-cli": "^9.0.1",
+        "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.16"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kmsk99/reddit-client-master.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/kmsk99/reddit-client-master/issues"
+    },
+    "homepage": "."
 }
