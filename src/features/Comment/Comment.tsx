@@ -3,8 +3,9 @@ import moment from 'moment';
 import ReactMarkdown from 'react-markdown';
 import './Comment.css';
 import Avatar from '../Avatar/Avatar';
+import type { RedditComment } from '../../api/reddit';
 
-const Comment = (props) => {
+const Comment = (props: { comment: RedditComment }) => {
   const { comment } = props;
   return (
     <div className="comment">

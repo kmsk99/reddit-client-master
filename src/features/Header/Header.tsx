@@ -3,14 +3,14 @@ import { HiOutlineSearch } from 'react-icons/hi';
 import './Header.css';
 import { FaReddit } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
-import { setSearchTerm } from '../../store/redditSlice';
+import { setSearchTerm, selectSearchTerm } from '../../store/redditSlice';
 
 const Header = () => {
   const [searchTermLocal, setSearchTermLocal] = useState('');
-  const searchTerm = useSelector((state) => state.reddit.searchTerm);
+  const searchTerm = useSelector(selectSearchTerm);
   const dispatch = useDispatch();
 
-  const onSearchTermChange = (e) => {
+  const onSearchTermChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTermLocal(e.target.value);
   };
 
@@ -18,7 +18,7 @@ const Header = () => {
     setSearchTermLocal(searchTerm);
   }, [searchTerm]);
 
-  const onSearchTermSubmit = (e) => {
+  const onSearchTermSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     dispatch(setSearchTerm(searchTermLocal));
   };

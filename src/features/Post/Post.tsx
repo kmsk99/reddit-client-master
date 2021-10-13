@@ -13,8 +13,12 @@ import shortenNumber from '../../utils/shortenNumber';
 import Card from '../../components/Card/Card';
 import Comment from '../Comment/Comment';
 import Avatar from '../Avatar/Avatar';
+import type { RedditPost } from '../../api/reddit';
 
-const Post = (props) => {
+const Post = (props: {
+  post: RedditPost;
+  onToggleComments: (permalink: string) => void;
+}) => {
   const [voteValue, setVoteValue] = useState(0);
 
   const { post, onToggleComments } = props;
@@ -22,7 +26,7 @@ const Post = (props) => {
   /**
    * @param {number} newValue The new vote value
    */
-  const onHandleVote = (newValue) => {
+  const onHandleVote = (newValue: number) => {
     if (newValue === voteValue) {
       setVoteValue(0);
     } else if (newValue === 1) {

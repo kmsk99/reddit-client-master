@@ -9,11 +9,12 @@ import {
   selectFilteredPosts,
   setSearchTerm,
   fetchComments,
+  selectReddit,
 } from '../../store/redditSlice';
 import './Home.css';
 
 const Home = () => {
-  const reddit = useSelector((state) => state.reddit);
+  const reddit = useSelector(selectReddit);
   const { isLoading, error, searchTerm, selectedSubreddit } = reddit;
   const posts = useSelector(selectFilteredPosts);
   const dispatch = useDispatch();
@@ -22,8 +23,8 @@ const Home = () => {
     dispatch(fetchPosts(selectedSubreddit));
   }, [selectedSubreddit]);
 
-  const onToggleComments = (index) => {
-    const getComments = (permalink) => {
+  const onToggleComments = (index: number) => {
+    const getComments = (permalink: string) => {
       dispatch(fetchComments(index, permalink));
     };
 
