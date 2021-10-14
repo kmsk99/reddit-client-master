@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Card from '../../components/Card/Card';
 import { fetchSubreddits, selectSubreddits } from '../../store/subRedditSlice';
-import './Subreddits.css';
 import {
     setSelectedSubreddit,
     selectSelectedSubreddit,
@@ -18,19 +17,23 @@ const Subreddits = () => {
     }, [dispatch]);
 
     return (
-        <Card className="subreddit-card">
-            <h2>Subreddits</h2>
-            <ul className="subreddits-list">
+        <Card className="pr-4 hover:bg-newtransparent-white">
+            <h2 className="mt-0 text-gray-800">Subreddits</h2>
+            <ul className="p-0 list-none">
                 {subreddits.map((subreddit) => (
                     <li
                         key={subreddit.id}
-                        className={`${
+                        className={` ${
                             selectedSubreddit === subreddit.url &&
-                            `selected-subreddit`
+                            `bg-newtransparent-blue border-l-4 border-solid border-indigo-900`
                         }`}
                     >
                         <button
                             type="button"
+                            className={`flex items-center w-full p-4 font-semibold text-gray-600 bg-transparent border-none rounded cursor-pointer hover:bg-white ${
+                                selectedSubreddit === subreddit.url &&
+                                ` text-indigo-600`
+                            }`}
                             onClick={() =>
                                 dispatch(setSelectedSubreddit(subreddit.url))
                             }
@@ -41,7 +44,7 @@ const Subreddits = () => {
                                     `https://api.adorable.io/avatars/25/${subreddit.display_name}`
                                 }
                                 alt={`${subreddit.display_name}`}
-                                className="subreddit-icon"
+                                className="w-6 h-6 mr-2 rounded-full"
                                 style={{
                                     border: `3px solid ${subreddit.primary_color}`,
                                 }}

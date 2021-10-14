@@ -48,12 +48,6 @@
     },
     "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.",
     "main": "portcss.config.js",
-    "devDependencies": {
-        "autoprefixer": "^9.8.8",
-        "postcss": "^7.0.39",
-        "postcss-cli": "^9.0.1",
-        "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.16"
-    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/kmsk99/reddit-client-master.git"
@@ -64,5 +58,10 @@
     "bugs": {
         "url": "https://github.com/kmsk99/reddit-client-master/issues"
     },
-    "homepage": "."
+    "homepage": ".",
+    "devDependencies": {
+        "autoprefixer": "^9.8.8",
+        "postcss": "^7.0.39",
+        "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
+    }
 }

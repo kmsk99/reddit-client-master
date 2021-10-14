@@ -23,10 +23,10 @@ const Header = () => {
     };
 
     return (
-        <header className="h-16 px-16 text-indigo-600 bg-white shadow-lg">
+        <header className="grid content-center h-16 grid-cols-3 gap-4 px-16 text-indigo-600 bg-white shadow-lg col-span-full">
             <div className="flex items-center col-span-1 col-start-1 py-2 font-bold">
                 <FaReddit className="col-span-1 col-start-2 mr-2 text-3xl" />
-                <p>
+                <p className="m-0">
                     Reddit<span className="text-gray-800">Minimal</span>
                 </p>
             </div>
